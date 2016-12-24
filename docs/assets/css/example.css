@@ -246,7 +246,7 @@ body
 
     text-align: center;
 
-    background-color: #fdcea0;
+    background-color: #f0e68c;
     background-image: url('../img/circle.png');
     background-repeat: no-repeat;
     background-position: -35% center;
@@ -295,7 +295,7 @@ section.section.section-default
 }
 section.section.section-inverse
 {
-    background-color: #fff5eb;
+    background-color: #f9f5d0;
 }
 section.section .subtitle
 {
@@ -326,19 +326,19 @@ section.section .subtitle h2
 }
 .point .point-box .point-circle.start
 {
-    background-color: #4caf50;
+    background-color: #b2cf3e;
 }
 .point .point-box .point-circle.replace
 {
-    background-color: #ff9800;
+    background-color: #f0ba32;
 }
 .point .point-box .point-circle.compass
 {
-    background-color: #2196f3;
+    background-color: #3b9ae0;
 }
 .point .point-box .point-circle.japanese
 {
-    background-color: #f44336;
+    background-color: #ea4b94;
 }
 .point .point-box .point-circle.japanese span.icon-jp::before
 {

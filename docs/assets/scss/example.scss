@@ -5,7 +5,7 @@
 @import "honoka/variables";
 @import "bootstrap/scss/mixins";
 
-$brand-honoka: #fdcea0;
+$brand-rin: #f0e68c;
 $brand-twitter: #55acee;
 $brand-facebook: #3b5998;
 $brand-hatena: #178fde;
@@ -74,7 +74,7 @@ body {
 	margin-bottom: 0;
 	overflow: hidden;
 	text-align: center;
-	background-color: $brand-honoka;
+	background-color: $brand-rin;
 	background-image: url("../img/circle.png");
 	background-repeat: no-repeat;
 	background-position: -35% center;
@@ -113,7 +113,7 @@ section.section {
 		background-color: $body-bg;
 	}
 	&.section-inverse {
-		background-color: lighten($brand-honoka, 15%);
+		background-color: lighten($brand-rin, 15%);
 	}
 	.subtitle {
 		margin-bottom: 1.5rem;
