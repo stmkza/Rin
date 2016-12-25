@@ -1,9 +1,9 @@
 {
-  "name": "Honoka",
-  "version": "4.0.0-alpha.1",
-  "description": "Honoka is one of the Bootstrap original theme.",
-  "author": "windyakin",
-  "website": "http://honokak.osaka/",
+  "name": "Rin",
+  "version": "4.0.0-alpha.2",
+  "description": "Rin is one of the Bootstrap theme forked from Honoka.",
+  "author": "Hagihara Ryosuke",
+  "website": "https://rinhoshizo.la/",
   "license": "MIT",
   "main": "Gruntfile.js",
   "scripts": {
