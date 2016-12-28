@@ -7,6 +7,245 @@ a, .btn {
 	transition-property: background-color;
 }
 
+// buttons
+.btn {
+	position: relative;
+	border-width: 0;
+	border-radius: 2px;
+	outline: none;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 0;
+		padding-top: 0;
+		content: "";
+		background-color: rgba(236, 240, 241, .3);
+		border-radius: 100%;
+		transform: translate(-50%, -50%);
+	}
+	&.active,
+	&:active {
+		box-shadow: none;
+	}
+	&.btn-link {
+		background-color: transparent;
+		box-shadow: none;
+	}
+}
+
+// group-button, dropdown-menu
+.nav-tabs,
+.nav-pills {
+	.dropdown {
+		> .dropdown-toggle {
+			margin: 0;
+			background-color: rgba($dropdown-bg, 0.9);
+			border: 0;
+			box-shadow: none;
+		}
+	}
+}
+
+.btn-group,
+.dropdown-toggle,
+.btn-group-vertical {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+	.btn-group,
+	.btn {
+		border-left: 1px solid $gray-lighter;
+		box-shadow: none;
+	}
+}
+
+// navbar
+.navbar {
+	border-radius: 0;
+	&.navbar-light,
+	&.navbar-dark {
+		background-color: rgba(#fff, .9);
+		border: 0;
+		border-bottom: 1px solid $brand-primary;
+		.navbar-nav {
+			> li:not(.active) {
+				> a:hover {
+					background-color: transparent;
+				}
+			}
+			.dropdown-toggle {
+				box-shadow: none;
+			}
+			@media (min-width: map-get($grid-breakpoints, md)) {
+				> li {
+					> a {
+						position: relative;
+						display: inline-block;
+						padding: .4em;
+						text-decoration: none;
+						&::after {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 1px;
+							content: "";
+							background-color: $brand-primary;
+							border: 0;
+							transition: all .3s ease;
+							transform: scaleX(0);
+						}
+						&:hover {
+							&::after {
+								transform: scaleX(1);
+							}
+						}
+					}
+				}
+				.dropdown-menu {
+					// margin-top: ($navbar-padding-y / 4 * 3);
+					border: 0;
+					border-radius: 0;
+					a {
+						&:hover {
+							color: $brand-primary;
+							background: transparent;
+						}
+					}
+				}
+				// active nav
+				&.active {
+					> a {
+						color: $gray-dark;
+						background-color: transparent;
+						&::after {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 1px;
+							content: "";
+							background-color: $brand-primary;
+							transform: scaleX(1);
+						}
+						&:hover {
+							color: $gray-dark;
+							background-color: transparent;
+						}
+					}
+				}
+				&.open {
+					.dropdown-menu {
+						background-color: rgba(255, 255, 255, .4);
+					}
+					> a {
+						color: $gray-dark;
+						background-color: transparent;
+						&:focus {
+							color: $gray-dark;
+							background-color: transparent;
+							&::after {
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 100%;
+								height: 1px;
+								content: "";
+								background-color: $brand-primary;
+								transform: scaleX(1);
+							}
+						}
+					}
+				}
+			}
+			> li:not(:last-child) {
+				margin-right: ($navbar-padding-x / 3);
+			}
+			// smartphones
+			@media (max-width: map-get($grid-breakpoints, sm)) {
+				> li {
+					&.open,
+					&.active {
+						> a {
+							color: $brand-primary;
+							background-color: transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.navbar-dark {
+		background-color: rgba($gray-dark, .8);
+		border: 0;
+		border-bottom: 1px solid $brand-primary;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			.navbar-nav {
+				li {
+					&.active {
+						> a {
+							color: $gray-lighter;
+							&:hover {
+								color: #fff;
+								&::after {
+									background-color: #fff;
+								}
+							}
+						}
+					}
+					&.open {
+						> a {
+							color: $gray-lighter;
+							background-color: transparent;
+							&:focus {
+								color: $gray-dark;
+								background-color: transparent;
+								&::after {
+									position: absolute;
+									bottom: 0;
+									left: 0;
+									width: 100%;
+									height: 1px;
+									content: "";
+									background-color: $brand-primary;
+									transform: scaleX(1);
+								}
+							}
+							&:focus {
+								color: $gray-lighter;
+							}
+							.dropdown-menu {
+								background-color: rgba($gray-dark, .9);
+								border: 0;
+								border-radius: 0;
+								.dropdown-item {
+									color: $gray-lighter;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn {
+			&:hover {
+				color: $gray-lighter;
+			}
+			&.btn-default {
+				&:hover {
+					background-color: $gray-dark;
+				}
+			}
+		}
+	}
+
+	.navbar-brand {
+		margin-right: ($navbar-padding-x);
+		font-size: $font-size-lg;
+	}
+}
+
 // フォント指定
 .no-thank-yu,
 .navbar,
