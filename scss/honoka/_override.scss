@@ -7,6 +7,28 @@ a, .btn {
 	transition-property: background-color;
 }
 
+// radius
+.nav-item {
+	.nav-link {
+		border-radius: 0;
+	}
+}
+.popover,
+.card,
+.breadcrumb {
+	border-radius: 0;
+}
+.list-group {
+	.list-group-item {
+		border-radius: 0;
+	}
+}
+
+.form-control,
+.input-group-addon {
+	border-radius: 0;
+}
+
 // buttons
 .btn {
 	position: relative;
@@ -36,21 +58,27 @@ a, .btn {
 	}
 }
 
-// group-button, dropdown-menu
-.nav-tabs,
-.nav-pills {
-	.dropdown {
-		> .dropdown-toggle {
-			margin: 0;
-			background-color: rgba($dropdown-bg, 0.9);
-			border: 0;
-			box-shadow: none;
+// dropdown
+.dropdown {
+	.dropdown-toggle {
+		border: 0;
+		box-shadow: none;
+	}
+	.dropdown-menu {
+		background: rgba(#fff, .9);
+		border: 0;
+		border-radius: 0;
+		a {
+			&:hover {
+				color: $brand-primary;
+				background: transparent;
+			}
 		}
 	}
 }
 
+// btn-shadow
 .btn-group,
-.dropdown-toggle,
 .btn-group-vertical {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
 	.btn-group,
@@ -62,61 +90,74 @@ a, .btn {
 
 // navbar
 .navbar {
+	background-color: rgba(#fff, .9);
+	border: 0;
+	border-bottom: 1px solid $brand-primary;
 	border-radius: 0;
-	&.navbar-light,
-	&.navbar-dark {
-		background-color: rgba(#fff, .9);
-		border: 0;
-		border-bottom: 1px solid $brand-primary;
-		.navbar-nav {
-			> li:not(.active) {
-				> a:hover {
-					background-color: transparent;
-				}
+	.navbar-nav {
+		> li:not(.active) {
+			> a:hover {
+				background-color: transparent;
 			}
-			.dropdown-toggle {
-				box-shadow: none;
-			}
-			@media (min-width: map-get($grid-breakpoints, md)) {
-				> li {
-					> a {
-						position: relative;
-						display: inline-block;
-						padding: .4em;
-						text-decoration: none;
+		}
+		.dropdown-toggle {
+			box-shadow: none;
+		}
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			> li {
+				> a {
+					position: relative;
+					display: inline-block;
+					padding: .4em;
+					text-decoration: none;
+					&::after {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 1px;
+						content: "";
+						background-color: $brand-primary;
+						border: 0;
+						transition: all .3s ease;
+						transform: scaleX(0);
+					}
+					&:hover {
 						&::after {
-							position: absolute;
-							bottom: 0;
-							left: 0;
-							width: 100%;
-							height: 1px;
-							content: "";
-							background-color: $brand-primary;
-							border: 0;
-							transition: all .3s ease;
-							transform: scaleX(0);
-						}
-						&:hover {
-							&::after {
-								transform: scaleX(1);
-							}
+							transform: scaleX(1);
 						}
 					}
 				}
+			}
+			// active nav
+			.active {
+				> a {
+					color: $gray-dark;
+					background-color: transparent;
+					&::after {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 1px;
+						content: "";
+						background-color: $brand-primary;
+						transform: scaleX(1);
+					}
+					&:hover {
+						color: $gray-dark;
+						background-color: transparent;
+					}
+				}
+			}
+			&.open {
 				.dropdown-menu {
-					// margin-top: ($navbar-padding-y / 4 * 3);
-					border: 0;
-					border-radius: 0;
-					a {
-						&:hover {
-							color: $brand-primary;
-							background: transparent;
-						}
-					}
+					background-color: rgba(255, 255, 255, .4);
 				}
-				// active nav
-				&.active {
-					> a {
+				> a {
+					color: $gray-dark;
+					background-color: transparent;
+					&:focus {
 						color: $gray-dark;
 						background-color: transparent;
 						&::after {
@@ -129,57 +170,24 @@ a, .btn {
 							background-color: $brand-primary;
 							transform: scaleX(1);
 						}
-						&:hover {
-							color: $gray-dark;
-							background-color: transparent;
-						}
 					}
 				}
-				&.open {
-					.dropdown-menu {
-						background-color: rgba(255, 255, 255, .4);
-					}
+			}
+		}
+		// smartphones
+		@media (max-width: map-get($grid-breakpoints, sm)) {
+			> li {
+				&.open,
+				&.active {
 					> a {
-						color: $gray-dark;
+						color: $brand-primary;
 						background-color: transparent;
-						&:focus {
-							color: $gray-dark;
-							background-color: transparent;
-							&::after {
-								position: absolute;
-								bottom: 0;
-								left: 0;
-								width: 100%;
-								height: 1px;
-								content: "";
-								background-color: $brand-primary;
-								transform: scaleX(1);
-							}
-						}
-					}
-				}
-			}
-			> li:not(:last-child) {
-				margin-right: ($navbar-padding-x / 3);
-			}
-			// smartphones
-			@media (max-width: map-get($grid-breakpoints, sm)) {
-				> li {
-					&.open,
-					&.active {
-						> a {
-							color: $brand-primary;
-							background-color: transparent;
-						}
 					}
 				}
 			}
 		}
 	}
 	&.navbar-dark {
-		background-color: rgba($gray-dark, .8);
-		border: 0;
-		border-bottom: 1px solid $brand-primary;
 		@media (min-width: map-get($grid-breakpoints, md)) {
 			.navbar-nav {
 				li {
@@ -188,9 +196,6 @@ a, .btn {
 							color: $gray-lighter;
 							&:hover {
 								color: #fff;
-								&::after {
-									background-color: #fff;
-								}
 							}
 						}
 					}
@@ -198,29 +203,16 @@ a, .btn {
 						> a {
 							color: $gray-lighter;
 							background-color: transparent;
-							&:focus {
-								color: $gray-dark;
-								background-color: transparent;
-								&::after {
-									position: absolute;
-									bottom: 0;
-									left: 0;
-									width: 100%;
-									height: 1px;
-									content: "";
-									background-color: $brand-primary;
-									transform: scaleX(1);
-								}
-							}
-							&:focus {
+							&:hover {
 								color: $gray-lighter;
 							}
-							.dropdown-menu {
-								background-color: rgba($gray-dark, .9);
-								border: 0;
-								border-radius: 0;
-								.dropdown-item {
-									color: $gray-lighter;
+						}
+						.dropdown-menu {
+							background: rgba($gray-dark, .9);
+							.dropdown-item {
+								color: $gray-lighter;
+								&:hover {
+									color: $brand-primary;
 								}
 							}
 						}
@@ -228,21 +220,6 @@ a, .btn {
 				}
 			}
 		}
-		.btn {
-			&:hover {
-				color: $gray-lighter;
-			}
-			&.btn-default {
-				&:hover {
-					background-color: $gray-dark;
-				}
-			}
-		}
-	}
-
-	.navbar-brand {
-		margin-right: ($navbar-padding-x);
-		font-size: $font-size-lg;
 	}
 }
 
