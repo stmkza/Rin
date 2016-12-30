@@ -1,11 +1,11 @@
 # Rin
 
-[![Build Status by Travis CI](https://travis-ci.org/raryosu/Rin.svg?branch=master)](https://travis-ci.org/raryosu/Rin)
-[![Build status by AppVeyor](https://ci.appveyor.com/api/projects/status/kly8aqr2ovqwg92p/branch/master?svg=true)](https://ci.appveyor.com/project/raryosu/rin/branch/master)
+[![Build Status by Travis CI](https://travis-ci.org/raryosu/Rin.svg?branch=v4-dev)](https://travis-ci.org/raryosu/Rin)
+[![Build status by AppVeyor](https://ci.appveyor.com/api/projects/status/kly8aqr2ovqwg92p/branch/v4-dev?svg=true)](https://ci.appveyor.com/project/raryosu/rin/branch/master)
 [![devDependency Status](https://david-dm.org/raryosu/Rin/dev-status.svg)](https://david-dm.org/raryosu/Rin#info=devDependencies)
 [![The MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[http://rinhoshizo.la/](http://rinhoshizo.la/)
+[http://v4-alpha.rinhoshizo.la/](https://v4-alpha.rinhoshizo.la/)
 
 [![Rin](docs/assets/img/sample.png)](http://rinhoshizo.la/)
 
@@ -17,8 +17,7 @@
 
 ## Live Demo
 
- * [http://rinhoshizo.la/bootstrap-ja.html](http://rinhoshizo.la/bootstrap-ja.html) (日本語レイアウト)
- * [http://rinhoshizo.la/bootstrap.html](http://rinhoshizo.la/bootstrap.html) (英語レイアウト)
+ * [http://rinhoshizo.la/bootstrap.html](https://v4-alpha.rinhoshizo.la/bootstrap.html)
 
 ## Getting Started
 
