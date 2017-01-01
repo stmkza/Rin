@@ -1,17 +1,4 @@
 @charset 'UTF-8';
-/*!
- * Rin v4.0.0-alpha.2
- * Website https://rinhoshizo.la/
- * Copyright 2016 Hagihara Ryosuke
- * The MIT License
- * Based on Honoka (http://honokak.osaka/) by windyakin
- */
-/*!
- * Bootstrap v4.0.0-alpha.5 (https://getbootstrap.com)
- * Copyright 2011-2016 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
- * Licensed under the MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 html
 {
@@ -8988,7 +8975,8 @@ a,
 
 .popover,
 .card,
-.breadcrumb
+.breadcrumb,
+.modal-content
 {
     border-radius: 0;
 }
@@ -9099,7 +9087,7 @@ a,
 }
 @media (min-width: 768px)
 {
-    .navbar .navbar-nav > li > a
+    .navbar .navbar-nav > li > a:not(.dropdown-toggle)
     {
         position: relative;
 
@@ -9109,7 +9097,7 @@ a,
 
         text-decoration: none;
     }
-    .navbar .navbar-nav > li > a::after
+    .navbar .navbar-nav > li > a:not(.dropdown-toggle)::after
     {
         position: absolute;
         bottom: 0;
@@ -9130,7 +9118,7 @@ a,
         border: 0;
         background-color: #3b9ae0;
     }
-    .navbar .navbar-nav > li > a:hover::after
+    .navbar .navbar-nav > li > a:not(.dropdown-toggle):hover::after
     {
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);

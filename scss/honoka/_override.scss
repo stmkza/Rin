@@ -15,7 +15,8 @@ a, .btn {
 }
 .popover,
 .card,
-.breadcrumb {
+.breadcrumb,
+.modal-content {
 	border-radius: 0;
 }
 .list-group {
@@ -105,7 +106,7 @@ a, .btn {
 		}
 		@media (min-width: map-get($grid-breakpoints, md)) {
 			> li {
-				> a {
+				> a:not(.dropdown-toggle) {
 					position: relative;
 					display: inline-block;
 					padding: .4em;
