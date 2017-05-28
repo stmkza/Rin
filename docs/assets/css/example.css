@@ -323,19 +323,19 @@ section.section .subtitle h2
 }
 .point .point-box .point-circle.start
 {
-    background-color: #b2cf3e;
+    background-color: #4caf56;
 }
 .point .point-box .point-circle.replace
 {
-    background-color: #f0ba32;
+    background-color: #ffc107;
 }
 .point .point-box .point-circle.compass
 {
-    background-color: #3b9ae0;
+    background-color: #2196f3;
 }
 .point .point-box .point-circle.japanese
 {
-    background-color: #ea4b94;
+    background-color: #e44336;
 }
 .point .point-box .point-circle.japanese span.icon-jp::before
 {
